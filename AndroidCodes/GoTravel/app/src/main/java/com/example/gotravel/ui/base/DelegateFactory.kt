@@ -15,32 +15,8 @@ open class DelegateFactory<F : BaseFragment<*>, VM : BaseViewModel>(
     }
 
     fun onViewCreated() {
-        getDelegates().forEach {
+        getDelegate().forEach {
             it.onViewCreated()
-        }
-    }
-
-    fun onCreateView() {
-        getDelegates().forEach {
-            it.onCreateView()
-        }
-    }
-
-    fun onResume() {
-        getDelegates().forEach {
-            it.onResume()
-        }
-    }
-
-    fun onPause() {
-        getDelegates().forEach {
-            it.onPause()
-        }
-    }
-
-    fun onDestroy() {
-        getDelegates().forEach {
-            it.onDestroy()
         }
     }
 
@@ -48,11 +24,7 @@ open class DelegateFactory<F : BaseFragment<*>, VM : BaseViewModel>(
         return emptyList()
     }
 
-    private fun getDelegates() : List<BaseDelegate<F, VM>> {
+    private fun getDelegate() : List<BaseDelegate<F, VM>> {
         return mapDelegate.values.toMutableList()
-    }
-
-    fun getDelegate(key : KeyDelegate) : BaseDelegate<F, VM>? {
-        return mapDelegate[key]
     }
 }
