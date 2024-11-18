@@ -1,7 +1,8 @@
-package com.example.baseblackboard
+package com.example.baseblackboard.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.baseblackboard.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
